@@ -13,7 +13,7 @@ mainWin.title('QRcodeGen')
 mainWin.minsize(300,100)
 mainWin.configure(background="darkslategray")
 
-#----Custom Function For Generating The QRcode----#
+#----Function for Generating The QRcode----#
 def qcode():
     global e
     string = e.get()
