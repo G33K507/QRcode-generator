@@ -1,36 +1,28 @@
 try:
     from tkinter import *
-#----For Python 3----#
 except ImportError:
     from Tkinter import *
 
 import pyqrcode
 import png
 
-#----The Window----#
 mainWin = Tk()
 mainWin.title('QRcodeGen')
 mainWin.minsize(300,100)
 mainWin.configure(background="darkslategray")
 
-#----Function for Generating The QRcode----#
 def qcode():
-    global e
-    string = e.get()
+    string = enter.get()
     img = pyqrcode.create(string)
     img.show(img)
 
-#----The Label----#
 label1 = Label(mainWin, text="--Input--", fg="aquamarine", bg="darkslategray")
 label1.pack()
 
-#----The Entry Field---#
-e = Entry(mainWin)
-e.pack()
-e.focus_set()
+enter = Entry(mainWin)
+enter.pack()
 
-#----The Button----#
-b = Button(mainWin,text='Generate!',command=qcode, bg="gray")
-b.pack(side='top')
+btn1 = Button(mainWin,text='Generate!',command=qcode, bg="gray")
+btn1.pack(side='top')
 
 mainWin.mainloop()
